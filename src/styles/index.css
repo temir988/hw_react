@@ -17,9 +17,15 @@ body {
   margin: 0;
   font-family: "YS Text";
   font-size: 13px;
+  color: var(--color-text);
 }
 
 .container {
   max-width: 824px;
   margin: 0 auto;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
 }

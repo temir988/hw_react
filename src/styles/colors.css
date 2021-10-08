@@ -4,4 +4,10 @@
   --blue-grey-500: #7f8285;
   --blue-grey-50: #f0f2f3;
   --green-500: #00b341;
+  --color-bg-action-hovered: #f2c200;
+  --color-bg-disabled: #f2f2f2;
+  --color-text-disabled: #7f7f7f;
+  --color-bg-control: #e6e6e6;
+  --color-bg-control-hovered: #dbdbdb;
+  --color-border-focused: #b3b3b3;
 }

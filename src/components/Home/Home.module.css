@@ -1,0 +1,30 @@
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+
+  max-width: 824px;
+  width: 100%;
+  justify-self: center;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.box {
+  max-width: 264px;
+  text-align: center;
+}
+
+.description {
+  margin-bottom: 24px;
+  line-height: 125%;
+}
