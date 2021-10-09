@@ -1,0 +1,12 @@
+.title {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.description {
+  color: var(--blue-grey-500);
+  margin: 0 0 20px 0;
+  line-height: 18px;
+}

@@ -9,12 +9,12 @@ import { ReactComponent as LogoSvg } from "./logo.svg";
 
 function Home() {
   return (
-    <div className={s.wrapper}>
+    <div className="wrapper">
       <Header>
         <NavLink to="/" className="link">
           <Logo />
         </NavLink>
-        <NavLink to="/setting" className="link">
+        <NavLink to="/settings" className="link">
           <IconButton icon="setting">Settings</IconButton>
         </NavLink>
       </Header>
@@ -26,7 +26,7 @@ function Home() {
           <div className={s.description}>
             Configure repository connection and synchronization settings
           </div>
-          <NavLink to="/setting" className="link">
+          <NavLink to="/settings" className="link">
             <Button type="action">Open settings</Button>
           </NavLink>
         </div>

@@ -29,3 +29,14 @@ body {
   display: inline-block;
   text-decoration: none;
 }
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+
+  max-width: calc(824px + 32px);
+  padding: 0 16px;
+  width: 100%;
+  justify-self: center;
+}

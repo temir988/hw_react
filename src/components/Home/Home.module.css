@@ -1,4 +1,4 @@
-.wrapper {
+/* .wrapper {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr;
@@ -6,7 +6,7 @@
   max-width: 824px;
   width: 100%;
   justify-self: center;
-}
+} */
 
 .main {
   display: flex;
