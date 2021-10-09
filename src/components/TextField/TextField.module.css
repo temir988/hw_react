@@ -1,0 +1,66 @@
+.label {
+  display: block;
+  margin-bottom: 6px;
+  line-height: 18px;
+}
+
+.wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.input {
+  display: block;
+  padding: 10px 13px;
+  border: 2px solid #d9d9d9;
+  border-radius: 4px;
+  min-width: 475px;
+  color: var(--color-text);
+  transition: all 0.2s;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--color-border-focused);
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 512px) {
+  .wrapper {
+    display: block;
+  }
+  .input {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+.required {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--red-500);
+}
+
+.clear {
+  display: block;
+  padding: 10px;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  cursor: pointer;
+}
+
+.clear svg {
+  display: block;
+}
+
+.inline {
+  min-width: auto;
+  width: 52px;
+  text-align: right;
+}

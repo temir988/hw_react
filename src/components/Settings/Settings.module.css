@@ -10,3 +10,25 @@
   margin: 0 0 20px 0;
   line-height: 18px;
 }
+
+.form {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.sync {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media only screen and (max-width: 512px) {
+  .actions {
+    flex-direction: column;
+  }
+}
