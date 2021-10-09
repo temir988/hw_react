@@ -14,7 +14,7 @@ function Settings() {
           <Logo />
         </NavLink>
       </Header>
-      <main>
+      <main className={s.main}>
         <h1 className={s.title}>Settings</h1>
         <p className={s.description}>
           Configure repository connection and synchronization settings.

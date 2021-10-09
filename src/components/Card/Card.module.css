@@ -1,0 +1,79 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 12px 24px;
+  box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3),
+    0px 1px 1px rgba(67, 68, 69, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3),
+    0px 2px 8px rgba(67, 68, 69, 0.3);
+}
+
+.left {
+  position: relative;
+  padding-left: 32px;
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+svg {
+  display: block;
+}
+
+.number {
+  display: inline-block;
+  margin-right: 4px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: var(--green-500);
+}
+
+.success {
+  color: var(--green-500);
+}
+
+.fail {
+  color: var(--red-500);
+}
+
+.pending {
+  color: var(--orange-500);
+}
+
+.text {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.titleRow {
+  margin-bottom: 8px;
+}
+
+.descRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconText {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
