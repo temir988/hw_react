@@ -44,7 +44,7 @@ function BuildHistory() {
     <div className="wrapper">
       <Header>
         <div className={s.title}>
-          philip1967/my-awesome-repo Run build Rebuild
+          philip1967/my-awesome-repo-with-long-long-long-repo-name
         </div>
         <div className={s.headerActions}>
           <IconButton type="secondary" icon="play">
@@ -59,9 +59,11 @@ function BuildHistory() {
         <div className={s.cardsList}>
           {cards && cards.map((card) => <Card key={card.number} card={card} />)}
         </div>
-        <Button type="secondary" size="small">
-          Show more
-        </Button>
+        <div className={s.showMore}>
+          <Button type="secondary" size="small">
+            Show more
+          </Button>
+        </div>
       </main>
     </div>
   );

@@ -6,7 +6,9 @@
 
 .headerActions {
   display: flex;
+  justify-content: flex-end;
   gap: 8px;
+  min-width: 140px;
 }
 
 .main {
@@ -17,4 +19,19 @@
   margin-bottom: 8px;
   display: grid;
   grid-gap: 8px;
+}
+
+@media only screen and (max-width: 425px) {
+  .title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .headerActions {
+    padding-left: 8px;
+    min-width: auto;
+  }
+  .showMore button {
+    width: 100%;
+    line-height: 32px;
+  }
 }

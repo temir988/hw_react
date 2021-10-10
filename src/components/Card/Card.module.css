@@ -77,3 +77,40 @@ svg {
   flex-direction: column;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 768px) {
+  .left {
+    margin-bottom: 8px;
+    padding-left: 24px;
+  }
+  .card {
+    padding: 16px 12px;
+    flex-direction: column;
+  }
+  .date {
+    padding-top: 8px;
+    border-top: 1px solid var(--blue-grey-50);
+    margin-left: 24px;
+    flex-direction: row;
+    justify-content: start;
+    gap: 8px;
+  }
+  .icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .number {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .text {
+    margin-bottom: 8px;
+  }
+  .descRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
