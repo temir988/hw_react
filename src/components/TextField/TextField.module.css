@@ -5,7 +5,6 @@
 }
 
 .wrapper {
-  display: inline-block;
   position: relative;
 }
 
@@ -14,7 +13,7 @@
   padding: 10px 13px;
   border: 2px solid #d9d9d9;
   border-radius: 4px;
-  min-width: 475px;
+  width: 100%;
   color: var(--color-text);
   transition: all 0.2s;
   outline: none;
@@ -31,10 +30,6 @@ input:focus {
 @media only screen and (max-width: 512px) {
   .wrapper {
     display: block;
-  }
-  .input {
-    min-width: auto;
-    width: 100%;
   }
 }
 
