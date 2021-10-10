@@ -58,9 +58,3 @@ input:focus {
 .clear svg {
   display: block;
 }
-
-.inline {
-  min-width: auto;
-  width: 52px;
-  text-align: right;
-}

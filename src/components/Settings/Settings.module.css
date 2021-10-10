@@ -32,3 +32,15 @@
     flex-direction: column;
   }
 }
+
+.inputNumber {
+  display: block;
+  padding: 10px 13px;
+  border: 2px solid #d9d9d9;
+  border-radius: 4px;
+  width: 52px;
+  color: var(--color-text);
+  transition: all 0.2s;
+  outline: none;
+  text-align: right;
+}

@@ -50,13 +50,18 @@ function BuildHistory() {
           <IconButton type="secondary" icon="play">
             Run Build
           </IconButton>
-          <IconButton type="secondary" icon="setting" />
+          <NavLink to="/settings" className="link">
+            <IconButton type="secondary" icon="setting" />
+          </NavLink>
         </div>
       </Header>
       <main className={s.main}>
         <div className={s.cardsList}>
           {cards && cards.map((card) => <Card key={card.number} card={card} />)}
         </div>
+        <Button type="secondary" size="small">
+          Show more
+        </Button>
       </main>
     </div>
   );

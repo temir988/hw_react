@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import NumberFormat from "react-number-format";
 
 import Header from "../Header/Header";
 import Logo from "../Logo/Logo";
@@ -33,7 +34,7 @@ function Settings() {
           <TextField label="Main branch" placeholder="user-name/repo-name" />
           <div className={s.sync}>
             Synchronize every
-            <TextField value="10" inline />
+            <NumberFormat value={10} className={s.inputNumber} />
             minutes
           </div>
           <div className={s.actions}>
