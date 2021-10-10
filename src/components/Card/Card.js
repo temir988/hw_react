@@ -29,7 +29,7 @@ export default function Card({ card }) {
           <span className={s.iconText}>
             <BranchIcon />
             {card.branch}
-            {card.hash}
+            <span className={s.hash}>{card.hash}</span>
           </span>
           <span className={s.iconText}>
             <UserIcon />

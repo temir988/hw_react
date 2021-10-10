@@ -9,41 +9,12 @@ import Modal from "../Modal/Modal";
 import TextField from "../TextField/TextField";
 import s from "./BuildHistory.module.css";
 
-function BuildHistory() {
-  const cards = [
-    {
-      status: "success",
-      number: 1368,
-      text: "Super cool UI kit for making websites that look like games",
-      branch: "super-cool-ui-kit",
-      hash: "9c9f0b9",
-      author: "Vadim Makeev",
-      date: "21 янв, 03:06",
-      time: "1 ч 20 мин",
-    },
-    {
-      status: "fail",
-      number: 1366,
-      text: "Super cool UI kit for making websites that look like games",
-      branch: "master",
-      hash: "b4636ab",
-      author: "Philip Kirkorov",
-      date: "21 янв, 03:06",
-      time: "1 ч 20 мин",
-    },
-    {
-      status: "pending",
-      number: 1365,
-      text: "upgrade typescript to 3.8",
-      branch: "master",
-      hash: "b4636ab",
-      author: "Vadim Makeev",
-      date: "21 янв, 03:06",
-      time: "1 ч 20 мин",
-    },
-  ];
+import data from "./data.json";
 
-  const [isOpen, setIsOpen] = useState(true);
+function BuildHistory({ settings }) {
+  const cards = data;
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -55,9 +26,7 @@ function BuildHistory() {
   return (
     <div className="wrapper">
       <Header>
-        <div className={s.title}>
-          philip1967/my-awesome-repo-with-long-long-long-repo-name
-        </div>
+        <div className={s.title}>{settings.repository}</div>
         <div className={s.headerActions}>
           <IconButton type="secondary" icon="play" clickHandler={openModal}>
             Run Build
@@ -84,7 +53,9 @@ function BuildHistory() {
         </p>
         <TextField placeholder="Commit hash" />
         <div className={s.modalActions}>
-          <Button type="action">Run Build</Button>
+          <Button type="action" handler={closeModal}>
+            Run Build
+          </Button>
           <Button type="secondary" clickHandler={closeModal}>
             Cancel
           </Button>

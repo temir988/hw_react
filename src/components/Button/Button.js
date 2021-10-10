@@ -1,7 +1,15 @@
 import s from "./Button.module.css";
 import cn from "classnames";
 
-function Button({ type, size, children, withIcon, clickHandler }) {
+function Button({
+  type,
+  size,
+  children,
+  withIcon,
+  clickHandler = () => {},
+  action = "",
+  disabled = false,
+}) {
   const classes = {
     action: s.action,
     secondary: s.secondary,
@@ -12,7 +20,12 @@ function Button({ type, size, children, withIcon, clickHandler }) {
   const styles = cn(s.button, classes[type], classes[size], classes.icon);
 
   return (
-    <button className={styles} onClick={clickHandler}>
+    <button
+      className={styles}
+      onClick={clickHandler}
+      type={action}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

@@ -9,12 +9,6 @@
   cursor: pointer;
 }
 
-.button:disabled {
-  background-color: var(--color-bg-disabled);
-  color: var(--color-text-disabled);
-  cursor: not-allowed;
-}
-
 .action {
   background-color: var(--color-bg-action);
   border-color: transparent;
@@ -44,6 +38,12 @@
 
 .secondary:focus {
   border-color: var(--color-border-focused);
+}
+
+.button:disabled {
+  background-color: var(--color-bg-disabled);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
 }
 
 .small {

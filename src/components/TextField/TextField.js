@@ -7,11 +7,14 @@ export default function TextField({
   required,
   placeholder,
   value = "",
+  name = "",
+  inputHandler,
 }) {
   const [text, setText] = useState(value);
 
-  const inputHandler = (e) => {
+  const handler = (e) => {
     setText(e.target.value);
+    inputHandler(e);
   };
 
   const clearTextField = () => {
@@ -33,8 +36,9 @@ export default function TextField({
           placeholder={placeholder}
           className={s.input}
           value={text}
-          onInput={inputHandler}
+          onInput={handler}
           required={required}
+          name={name}
         />
 
         {text && (
