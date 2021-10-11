@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import s from "./TextField.module.css";
 import { ReactComponent as ClearIcon } from "./clear.svg";
+import { changeInput } from "../../features/settings/settingsSlice";
 
 export default function TextField({
   label,
@@ -8,9 +10,10 @@ export default function TextField({
   placeholder,
   value = "",
   name = "",
-  inputHandler,
+  inputHandler = () => {},
 }) {
   const [text, setText] = useState(value);
+  const dispatch = useDispatch();
 
   const handler = (e) => {
     setText(e.target.value);
@@ -19,6 +22,7 @@ export default function TextField({
 
   const clearTextField = () => {
     setText("");
+    dispatch(changeInput({ name, value: "" }));
   };
 
   return (

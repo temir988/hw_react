@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, Redirect } from "react-router-dom";
 import NumberFormat from "react-number-format";
+import { useSelector, useDispatch } from "react-redux";
 
 import Header from "../Header/Header";
 import Logo from "../Logo/Logo";
@@ -8,26 +9,33 @@ import TextField from "../TextField/TextField";
 import Button from "../Button/Button";
 import s from "./Settings.module.css";
 import Modal from "../Modal/Modal";
+import { changeInput } from "../../features/settings/settingsSlice";
 
-function Settings({ settings, setSettings }) {
+function Settings() {
+  const settings = useSelector((state) => state.settings);
+  const dispatch = useDispatch();
+
   const [isLoading, setIsLoading] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const [hasError, setHasError] = useState(false);
 
+  let delayTimeout = null;
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(delayTimeout);
+    };
+  }, [delayTimeout]);
+
   const changeHandler = (e) => {
     const { value, name } = e.target;
-    setSettings((state) => {
-      return {
-        ...state,
-        [name]: value,
-      };
-    });
+    dispatch(changeInput({ name, value }));
   };
 
   const cloneRepository = (form) => {
     return new Promise((resolve, reject) => {
       const random = Math.random();
-      setTimeout(() => {
+      delayTimeout = setTimeout(() => {
         if (random < 0.5) {
           resolve("successed clone");
         } else {
@@ -47,7 +55,7 @@ function Settings({ settings, setSettings }) {
     setIsLoading(true);
     try {
       await cloneRepository();
-      setRedirect("history");
+      setRedirect("/");
     } catch {
       showError();
       setHasError(true);
@@ -66,12 +74,7 @@ function Settings({ settings, setSettings }) {
 
   const numberChange = (values) => {
     const { formattedValue } = values;
-    setSettings((state) => {
-      return {
-        ...state,
-        sync: formattedValue,
-      };
-    });
+    dispatch(changeInput({ name: "sync", value: formattedValue }));
   };
 
   const cancelForm = (e) => {
@@ -105,14 +108,14 @@ function Settings({ settings, setSettings }) {
             placeholder="user-name/repo-name"
             required
             name="command"
-            value={settings.repository}
+            value={settings.command}
             inputHandler={changeHandler}
           />
           <TextField
             label="Main branch"
             placeholder="user-name/repo-name"
             name="branch"
-            value={settings.repository}
+            value={settings.branch}
             inputHandler={changeHandler}
           />
           <div className={s.sync}>
