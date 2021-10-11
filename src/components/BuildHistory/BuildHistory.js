@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Header from "../Header/Header";
 import Button from "../Button/Button";
@@ -11,7 +12,8 @@ import s from "./BuildHistory.module.css";
 
 import data from "./data.json";
 
-function BuildHistory({ settings }) {
+function BuildHistory() {
+  const settings = useSelector((state) => state.settings);
   const cards = data;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +55,7 @@ function BuildHistory({ settings }) {
         </p>
         <TextField placeholder="Commit hash" />
         <div className={s.modalActions}>
-          <Button type="action" handler={closeModal}>
+          <Button type="action" clickHandler={closeModal}>
             Run Build
           </Button>
           <Button type="secondary" clickHandler={closeModal}>

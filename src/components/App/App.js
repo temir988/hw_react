@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Home from "../Home/Home";
 import Settings from "../Settings/Settings";
@@ -9,29 +9,17 @@ import Footer from "../Footer/Footer";
 import styles from "./App.module.css";
 
 function App() {
-  const [settings, setSettings] = useState({
-    repository: "",
-    command: "",
-    branch: "",
-    sync: 10,
-  });
+  const settings = useSelector((state) => state.settings);
 
   return (
     <Router>
       <div className={styles.wrapper}>
         <Switch>
-          <Route path="/history">
-            <BuildHistory settings={settings} />
-          </Route>
           <Route path="/settings">
-            <Settings settings={settings} setSettings={setSettings} />
+            <Settings />
           </Route>
           <Route path="/" exact>
-            {settings.repository !== "" ? (
-              <BuildHistory settings={settings} />
-            ) : (
-              <Home />
-            )}
+            {settings.repository !== "" ? <BuildHistory /> : <Home />}
           </Route>
         </Switch>
         <Footer />
